@@ -179,10 +179,49 @@
       from { transform: scale(.8); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+
+    /* MOBILE BLOCK */
+    .mobile-block {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #fff;
+      z-index: 10000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      font-family: system-ui, sans-serif;
+    }
+
+    .mobile-block h1 {
+      font-size: clamp(24px, 6vw, 32px);
+      margin-bottom: 15px;
+      color: #ff4d6d;
+    }
+
+    .mobile-block p {
+      font-size: 18px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 767px) {
+      .mobile-block { display: flex; }
+      main.card, .floating-hearts, #confettiCanvas { display: none !important; }
+      body { background: #000; overflow: hidden; }
+    }
   </style>
 </head>
 
 <body>
+  <div class="mobile-block">
+    <h1>Desktop Only Experience</h1>
+    <p>Please open this special surprise on a desktop or laptop to see it properly! ❤️</p>
+  </div>
+
   <div class="floating-hearts" id="floatingHearts"></div>
   <canvas id="confettiCanvas"></canvas>
 
